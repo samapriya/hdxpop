@@ -45,10 +45,11 @@ import sys
 import glob
 from bs4 import BeautifulSoup
 
-MAIN_URL = "https://data.humdata.org/organization/facebook?res_format=zipped%20geotiff&q=&ext_page_size=250"
+MAIN_URL = "https://data.humdata.org/organization/facebook?res_format=ZIP&res_format=zipped%20geotif&res_format=zipped%20geotiff&res_format=zipped%20goetiff&q=&ext_page_size=250"
 
 
 i = 1  # Set a counter
+
 
 def downonly(url, destination):
     """[Downloader to check and download imagery]
@@ -117,29 +118,42 @@ def humdata(destination):
     except Exception as e:
         print(e)
     except (KeyboardInterrupt, SystemExit) as e:
-        print('Program escaped by User')
+        print("Program escaped by User")
         sys.exit()
+
 
 def humdata_from_parser(args):
     humdata(destination=args.folder)
 
 
-def unzip(initial,final):
+def unzip(initial, final):
     """Unzip files and moves them into a folder"""
     for root, dirs, files in os.walk(initial):
         for i in files:
             if i.endswith(".zip"):
                 fullpath = os.path.join(root, i)
-                zip_ref = zipfile.ZipFile(fullpath) # create zipfile object
+                zip_ref = zipfile.ZipFile(fullpath)  # create zipfile object
                 for file in zip_ref.namelist():
-                    if zip_ref.getinfo(file).filename.endswith('.tif') and not os.path.exists(os.path.join(final,zip_ref.getinfo(file).filename)):
-                        print('Extracting: '+str(zip_ref.getinfo(file).filename))
+                    if zip_ref.getinfo(file).filename.endswith(
+                        ".tif"
+                    ) and not os.path.exists(
+                        os.path.join(final, zip_ref.getinfo(file).filename)
+                    ):
+                        print("Extracting: " + str(zip_ref.getinfo(file).filename))
                         zip_ref.extract(file, final)
-                    elif zip_ref.getinfo(file).filename.endswith('.tif') and os.path.exists(os.path.join(final,zip_ref.getinfo(file).filename)):
-                        print('Existing file Skipped: '+str(zip_ref.getinfo(file).filename))
+                    elif zip_ref.getinfo(file).filename.endswith(
+                        ".tif"
+                    ) and os.path.exists(
+                        os.path.join(final, zip_ref.getinfo(file).filename)
+                    ):
+                        print(
+                            "Existing file Skipped: "
+                            + str(zip_ref.getinfo(file).filename)
+                        )
+
 
 def unzip_from_parser(args):
-    unzip(initial=args.initial,final=args.final)
+    unzip(initial=args.initial, final=args.final)
 
 
 def main(args=None):
@@ -153,9 +167,7 @@ def main(args=None):
     parser_humdata.add_argument("--folder", help="Folder to store results")
     parser_humdata.set_defaults(func=humdata_from_parser)
 
-    parser_unzip = subparsers.add_parser(
-        "unzip", help="Unzip downloaded HDX files"
-    )
+    parser_unzip = subparsers.add_parser("unzip", help="Unzip downloaded HDX files")
     parser_unzip.add_argument("--initial", help="Folder with zipped files")
     parser_unzip.add_argument("--final", help="Foler with unzipped tif files")
     parser_unzip.set_defaults(func=unzip_from_parser)

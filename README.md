@@ -70,5 +70,8 @@ python hdxpop.py -h
 
 ## Changelog
 
+### v0.0.3
+- Changes to search URL to include geotif, zipped only, goetiff and geotiff keyword filters.
+
 ### v0.0.2
 - Added installation instructions and setup

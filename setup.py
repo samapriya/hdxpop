@@ -20,7 +20,7 @@ def readme():
         return f.read()
 setuptools.setup(
     name='hdxpop',
-    version='0.0.2',
+    version='0.0.3',
     packages=['hdxpop'],
     url='https://github.com/samapriya/hdxpop',
     install_requires=['requests>=2.21.1','beautifulsoup4>=4.8.2',],
