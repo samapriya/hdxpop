@@ -1,51 +1,29 @@
-# environment:
-#   matrix:
-#     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-#       PYTHON: "C:\\Python38-x64"
-#     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-#       PYTHON: "$HOME/venv3.8.2
-#     - APPVEYOR_BUILD_WORKER_IMAGE: macOS
-
-# build: off
-
-# max_jobs: 1
-
-# test_script:
-#     - "source $HOME/venv3.8.2/bin/activate"
-#     - "%PYTHON%\\python setup.py install"
-#     - "%PYTHON%\\Scripts\\hdxpop -h"
-#   for:
-# -
-#   matrix:
-#     except:
-#       - configuration: Debug
-#         platform: x86
-
-#   test_script:
-#   - echo matrix except script
-
 version: 1.0.{build}
 image: 
   - Visual Studio 2019
   - Ubuntu
 environment:
   matrix:
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      PYTHON: "C:\\Python38-x64"
+    - Windows: Visual Studio 2019
+    - Ubuntu: Ubuntu
 
 build: off
 
 for:
-- 
-  matrix:
+  -
+    matrix:
+      only:
+        - image: Ubuntu
+    environment:
+      PYTHON: "python3"
+    test_script:
+      - "python3 --version"
+
+  -
+    matrix:
       only:
         - image: Visual Studio 2019
-  test_script:
-    - "%PYTHON%\\python setup.py install"
--
-  matrix:
-    except:
-    - image: Ubuntu
-
-  test_script:
-    - "python3 --version"
+    environment:
+      PYTHON: "C:\\Python38-x64"
+    test_script:
+      - "%PYTHON%\\python setup.py install"
