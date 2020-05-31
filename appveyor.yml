@@ -2,10 +2,10 @@ version: 1.0.{build}
 image: 
   - Visual Studio 2019
   - Ubuntu
-environment:
-  matrix:
-    - Windows: Visual Studio 2019
-    - Ubuntu: Ubuntu
+# environment:
+#   matrix:
+#     - Windows: Visual Studio 2019
+#     - Ubuntu: Ubuntu
 
 build: off
 
