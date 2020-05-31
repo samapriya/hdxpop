@@ -43,4 +43,4 @@ for:
       only:
         - image: Visual Studio 2019
   test_script:
-    - "%PYTHON%\\python3 setup.py install"
+    - "%PYTHON%\\python setup.py install"
