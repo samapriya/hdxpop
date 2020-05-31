@@ -32,7 +32,6 @@ environment:
   matrix:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       PYTHON: "C:\\Python38-x64"
-    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
 
 build: off
 
