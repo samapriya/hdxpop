@@ -3,9 +3,7 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       PYTHON: "C:\\Python38-x64"
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
-      PYTHON: "$HOME/venv3.8.2"
     - APPVEYOR_BUILD_WORKER_IMAGE: macOS
-      PYTHON: "~/venv3.8.0"
 
 build: off
 
