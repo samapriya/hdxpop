@@ -28,6 +28,11 @@ version: 1.0.{build}
 image: 
   - Visual Studio 2019
   - Ubuntu
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      PYTHON: "C:\\Python38-x64"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
 
 build: off
 
@@ -36,9 +41,6 @@ for:
   matrix:
       only:
         - image: Visual Studio 2019
-  environment:
-    matrix:
-        PYTHON: "C:\\Python38-x64"
   test_script:
     - "%PYTHON%\\python setup.py install"
 -
