@@ -36,5 +36,10 @@ environment:
       PYTHON: "$HOME/venv3.8.2"
 build:
   verbosity: minimal
-test_script:
-    - "python3 --version"
+for:
+-
+  matrix:
+    only:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+  build_script:
+  - "python3 --version"
