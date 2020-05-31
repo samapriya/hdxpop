@@ -32,4 +32,4 @@ environment:
 build:
   verbosity: minimal
 test_script:
-    - "python --version"
+    - "python3 --version"
