@@ -40,9 +40,9 @@ for:
     PYTHON: "C:\\Python38-x64"
   test_script:
     - "%PYTHON%\\python setup.py install"
--
-  image:
-    only:
-      - Ubuntu
-  test_script:
-    - "python3 --version"
+# -
+#   image:
+#     only:
+#       - Ubuntu
+#   test_script:
+#     - "python3 --version"
