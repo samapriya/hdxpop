@@ -14,7 +14,7 @@ for:
     environment:
       PYTHON: "python3"
     test_script:
-      - "pip3 --version"
+      - "python3 -m pip --version"
       - "python3 setup.py install"
   -
     matrix:
