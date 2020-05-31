@@ -34,4 +34,4 @@ for:
       PYTHON: "C:\\Python38-x64"
     test_script:
       - "%PYTHON%\\python setup.py install"
-      - "hdxpop -h"
+      - "%PYTHON%\\Scripts\\hdxpop.exe -h"
