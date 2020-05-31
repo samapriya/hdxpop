@@ -3,6 +3,7 @@ environment:
     - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
       PYTHON: "C:\\Python38-x64"
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+      PYTHON: "$HOME/venv3.8.2
     - APPVEYOR_BUILD_WORKER_IMAGE: macOS
 
 build: off
@@ -10,5 +11,6 @@ build: off
 max_jobs: 1
 
 test_script:
-  - "%PYTHON%\\python setup.py install"
-  - "%PYTHON%\\Scripts\\hdxpop -h"
+  - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+    - "%PYTHON%\\python setup.py install"
+    - "%PYTHON%\\Scripts\\hdxpop -h"
