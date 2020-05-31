@@ -25,10 +25,7 @@
 #   - echo matrix except script
 
 version: 1.0.{build}
-image: Ubuntu
-environment:
-  matrix:
-  - PYTHON: $HOME/venv3.8.2
+image: Visual Studio 2019
 build:
   verbosity: minimal
 test_script:
