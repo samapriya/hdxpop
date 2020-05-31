@@ -26,6 +26,12 @@
 
 version: 1.0.{build}
 image: Visual Studio 2019
+environment:
+  matrix:
+    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+      PYTHON: "C:\\Python38-x64"
+    - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+      PYTHON: "$HOME/venv3.8.2
 build:
   verbosity: minimal
 test_script:
