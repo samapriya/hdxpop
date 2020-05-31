@@ -36,11 +36,9 @@ environment:
 build: off
 
 for:
-- 
   matrix:
-    only:
-      image:
-        - Visual Studio 2019
+      only:
+        - image: Visual Studio 2019
   test_script:
     - "%PYTHON%\\python setup.py install"
 # -
