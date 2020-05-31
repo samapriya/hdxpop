@@ -42,5 +42,5 @@ for:
       only:
         - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
     build_script:
-    - "%PYTHON%\\python setup.py install"
+    - "%PYTHON%\\python3 setup.py install"
     - "python3 --version"
