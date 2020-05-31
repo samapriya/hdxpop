@@ -15,21 +15,21 @@ for:
       stack: python 3.5
     test_script:
 #       - "wget https://bootstrap.pypa.io/get-pip.py"
-#       - "python3 get-pip.py"
-      - "python3 setup.py install"
-  -
-    matrix:
-      only:
-        - image: macOS
-    environment:
-      PYTHON: "python3"
-    test_script:
-      - "python3 setup.py install"
-  -
-    matrix:
-      only:
-        - image: Visual Studio 2019
-    environment:
-      PYTHON: "C:\\Python38-x64"
-    test_script:
-      - "%PYTHON%\\python setup.py install"
+      - "source $HOME/venv3.8.2/bin/activate"
+      - "python setup.py install"
+#   -
+#     matrix:
+#       only:
+#         - image: macOS
+#     environment:
+#       PYTHON: "python3"
+#     test_script:
+#       - "python3 setup.py install"
+#   -
+#     matrix:
+#       only:
+#         - image: Visual Studio 2019
+#     environment:
+#       PYTHON: "C:\\Python38-x64"
+#     test_script:
+#       - "%PYTHON%\\python setup.py install"
