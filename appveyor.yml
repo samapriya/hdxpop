@@ -14,8 +14,8 @@ for:
     environment:
       stack: python 3.6
     test_script:
-      - "wget https://bootstrap.pypa.io/get-pip.py"
-      - "python3 get-pip.py"
+#       - "wget https://bootstrap.pypa.io/get-pip.py"
+#       - "python3 get-pip.py"
       - "python3 setup.py install"
   -
     matrix:
