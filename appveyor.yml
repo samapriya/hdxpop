@@ -34,7 +34,16 @@ environment:
       PYTHON: "C:\\Python38-x64"
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
       PYTHON: "python3"
-
-test_script:
-  - "%PYTHON%\\python3 setup.py install"
-  - "python3 --version"
+for:
+- 
+  matrix:
+      only:
+        - image: Visual Studio 2019
+  test_script:
+    - "%PYTHON%\\python3 setup.py install"
+    - "python3 --version"
+-
+  matrix:
+    except:
+  test_script:
+    - "python3 --version"
