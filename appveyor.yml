@@ -29,10 +29,6 @@ image:
   - Visual Studio 2019
   - Ubuntu
 
-environment:
-  matrix:
-      PYTHON: "C:\\Python38-x64"
-
 build: off
 
 for:
@@ -40,6 +36,9 @@ for:
   matrix:
       only:
         - image: Visual Studio 2019
+  environment:
+    matrix:
+        PYTHON: "C:\\Python38-x64"
   test_script:
     - "%PYTHON%\\python setup.py install"
 -
