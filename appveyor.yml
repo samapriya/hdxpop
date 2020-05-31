@@ -13,9 +13,8 @@ for:
         - image: Ubuntu
     environment:
       PYTHON: "python3"
-    install:
-      - pip3 install setuptools
     test_script:
+      - "pip3 --version"
       - "python3 setup.py install"
   -
     matrix:
