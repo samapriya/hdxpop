@@ -1,6 +1,7 @@
 # hdxpop
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3735435.svg)](https://doi.org/10.5281/zenodo.3735435)
+[![Build status](https://ci.appveyor.com/api/projects/status/8acj7x6fcmecouj0?svg=true)](https://ci.appveyor.com/project/samapriya/hdxpop)
 
 Simple tool to download High Resolution Population Density Maps from Humanitarian Data Exchange
 
