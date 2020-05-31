@@ -36,14 +36,16 @@ environment:
 build: off
 
 for:
+- 
   matrix:
       only:
         - image: Visual Studio 2019
   test_script:
     - "%PYTHON%\\python setup.py install"
-# -
-#   image:
-#     only:
-#       - Ubuntu
-#   test_script:
-#     - "python3 --version"
+-
+  matrix:
+    except:
+    - image: Ubuntu
+
+  test_script:
+    - "python3 --version"
