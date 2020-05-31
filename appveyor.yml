@@ -42,5 +42,12 @@ for:
   matrix:
       only:
         - image: Visual Studio 2019
-      test_script:
-        - "%PYTHON%\\python setup.py install"
+  test_script:
+    - "%PYTHON%\\python setup.py install"
+-
+  matrix:
+    except:
+    - image: Ubuntu
+
+  test_script:
+    - "python3 --version"
