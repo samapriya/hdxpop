@@ -34,8 +34,8 @@ build: off
 for:
 - 
   image:
-      only:
-        - Visual Studio 2019
+    only:
+      - Visual Studio 2019
   environment:
     PYTHON: "C:\\Python38-x64"
   test_script:
