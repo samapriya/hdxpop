@@ -1,28 +1,12 @@
 image:
   - Visual Studio 2019
+  - Ubuntu
+   - macOS
 environment:
   matrix:
     - PYTHON: "C:\\Python38"
     - PYTHON: "C:\\Python38-x64"
-
-image:
-- Ubuntu
-environment:
-  matrix:
     - PYTHON: "$HOME/venv3.8.2"
-    - PYTHON: "~/venv3.8.0"
-build: off
-
-max_jobs: 1
-
-test_script:
-  - "%PYTHON%\\python setup.py install"
-  - "%PYTHON%\\Scripts\\hdxpop -h"
-  
-image:
-  - macOS
-environment:
-  matrix:
     - PYTHON: "~/venv3.8.0"
 
 build: off
