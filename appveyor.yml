@@ -34,6 +34,9 @@ environment:
       PYTHON: "C:\\Python38-x64"
     - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
       PYTHON: "python3"
+
+build: off
+
 for:
 - 
   matrix:
