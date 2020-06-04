@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3735435.svg)](https://doi.org/10.5281/zenodo.3735435)
 [![Downloads](https://pepy.tech/badge/hdxpop/month)](https://pepy.tech/project/hdxpop/month)
-[![Build status](https://ci.appveyor.com/api/projects/status/8acj7x6fcmecouj0?svg=true)](https://ci.appveyor.com/project/samapriya/hdxpop)
+![CI hdxpop](https://github.com/samapriya/hdxpop/workflows/CI%20hdxpop/badge.svg)
 
 Simple tool to download High Resolution Population Density Maps from Humanitarian Data Exchange
 
