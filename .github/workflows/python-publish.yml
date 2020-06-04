@@ -31,5 +31,5 @@ jobs:
         pip install flake8 pytest wheel
     - name: Test package
       run: |
-        python setup.py
+        python setup.py install
         hdxpop -h
